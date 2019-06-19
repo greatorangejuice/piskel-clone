@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Piskel-clone</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1"></head>
+
+<body>
+  <div class="grid">
+    <header class="header">
+    </header>
+    <div class="tools-bar">
+      <div class="canvas-tools">
+
+          <div class="pen-size-tool">
+             <button data-action="line-size-tool" class="line-size-tool tool" id="pen-tool">Pen size</button>
+             <input type="range" min="1" max="10" step="1" class="pixel-size input hide" value="4">
+          </div>
+            <button data-action="pen-tool" class="pen-tool tool" id="pen-tool"><img data-action="pen-tool" src="../../../src/screens/canvas/images/pencil.svg" width="25" height="25" alt="pencil"></button>
+            <button data-action="pen-tool-test" class="pen-tool-test tool"><img data-action="pen-tool-test" src="../../../src/screens/canvas/images/circle-shape-outline.svg" width="25" height="25" alt="pencil"></button>
+            <button data-action="bucket-tool" class="bucket-tool tool" id="bucket-tool"><img data-action="bucket-tool" src="./../../src/screens/canvas/images/paint-bucket.svg" width="25" height="25" alt="paintbucket"></button>
+            <button data-action="rectangle-tool" class="rectangle-tool tool" id="rectangle-tool"><img data-action="rectangle-tool" src="./../../src/screens/canvas/images/photo-frame.svg" width="25" height="25" alt="rectagle"></button>
+            <button data-action="trash-tool" class="trash-tool tool" id="trash-tool"><img data-action="trash-tool" src="./../../src/screens/canvas/images/garbage.svg" width="25" height="25" alt="garbage"></button>
+            <button data-action="eraser" class="eraser tool" id="eraser"><img data-action="eraser" src="./../../src/screens/canvas/images/eraser.svg" width="25" height="25" alt="eraser"></button>
+
+          <div class="colors">
+            <input type="color" class="color primary">
+            <button data-action="swap-color" class="swap-colors"><img data-action="swap-color" src="./../../src/screens/canvas/images/transfer.svg" width="25" height="25" alt="transfer"></button>
+            <input type="color" class="color secondary">
+          </div>
+      </div>
+    </div>
+    <div class="frames-bar">
+      <div class="layers-field">
+        <div class="shots">
+        </div>
+        <button class="add-frame-tool"><img src="./../../src/screens/canvas/images/plus.svg" width="20" height="20" alt="add frame">Add frame</button>
+      </div>
+    </div>
+    <div class="canvas-field">
+      <div>
+        <canvas class="paint-field" width="128" height="128"></canvas>
+      </div>
+    </div>
+    <div class="layers-tools">
+      <div>
+        <canvas class="animation" width="128" height="128"></canvas>
+      </div>
+      <div class="properties">
+          <button class="fullscreen-tool">Fullscreen</button>
+          <input type="range" min="0" max="24" step="1" class="speed input" value="0"> <label class = "current-speed">0</label>
+      </div>
+      <div class="canvas-field-properties">
+        <button data-action="canvas-size-tool" class="canvas-size-tool">Field size</button>
+      </div>
+      <div class="paint-field-params">
+        <div class="cords">
+          <span class="x-coord"></span>
+          <span class="y-coord"></span>
+        </div>
+        <div>
+          <span class="size">[128x128]</span>
+        </div>
+      </div>
+      <div class="canvas-size hide">
+        <button data-action="small" class="small-size">32x32</button>
+        <button data-action="medium" class="medium-size">64x64</button>
+        <button data-action="large" class="large-size">128x128</button>
+    </div>
+    </div>
+    <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+  </div>
+<script type="text/javascript" src="app.bundle.js"></script></body>
+
+</html>
