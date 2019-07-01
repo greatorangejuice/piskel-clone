@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="772436373829-r192ck9525k0c0dfa61679pp47ciolgn.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <title>Piskel-clone</title>
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1"></head>
@@ -12,26 +15,61 @@
 <body>
   <div class="grid">
     <header class="header">
+      <img src="../../../src/screens/canvas/images/logo.png" alt="Piskel Clone" width="">
+        <div class="google-auth">
+          <div class="g-signin2 signIn signInButton" data-onsuccess="onSignIn"></div>
+          <div class="signOutButton">
+            <a href="#" onclick="signOut();" class="signOut signOutButton">Sign out</a>
+          </div>
+          <div class="welcome"></div>
+          <div><img class="welcome-avatar" src="#" alt=""></div>
+        </div>
     </header>
     <div class="tools-bar">
       <div class="canvas-tools">
 
           <div class="pen-size-tool">
-             <button data-action="line-size-tool" class="line-size-tool tool" id="pen-tool">Pen size</button>
+             <button data-action="line-size-tool" class="line-size-tool tool" id="size">Pen size</button>
              <input type="range" min="1" max="10" step="1" class="pixel-size input hide" value="4">
           </div>
-            <button data-action="pen-tool" class="pen-tool tool" id="pen-tool"><img data-action="pen-tool" src="../../../src/screens/canvas/images/pencil.svg" width="25" height="25" alt="pencil"></button>
-            <button data-action="pen-tool-test" class="pen-tool-test tool"><img data-action="pen-tool-test" src="../../../src/screens/canvas/images/circle-shape-outline.svg" width="25" height="25" alt="pencil"></button>
-            <button data-action="bucket-tool" class="bucket-tool tool" id="bucket-tool"><img data-action="bucket-tool" src="./../../src/screens/canvas/images/paint-bucket.svg" width="25" height="25" alt="paintbucket"></button>
-            <button data-action="rectangle-tool" class="rectangle-tool tool" id="rectangle-tool"><img data-action="rectangle-tool" src="./../../src/screens/canvas/images/photo-frame.svg" width="25" height="25" alt="rectagle"></button>
-            <button data-action="trash-tool" class="trash-tool tool" id="trash-tool"><img data-action="trash-tool" src="./../../src/screens/canvas/images/garbage.svg" width="25" height="25" alt="garbage"></button>
-            <button data-action="eraser" class="eraser tool" id="eraser"><img data-action="eraser" src="./../../src/screens/canvas/images/eraser.svg" width="25" height="25" alt="eraser"></button>
+            <button data-action="pen-tool" class="pen-tool tool" id="pen-tool"><img data-action="pen-tool" src="./dist/images/pencil.svg" width="25" height="25" alt="pencil"></button>
+            <button data-action="mirror-pen-tool" class="mirror-pen-tool tool" id="mirror-pen-tool"><img data-action="pen-tool" src="./dist/images/mirror.svg" width="25" height="25" alt="mirror"></button>
+            <button data-action="circle" class="circle tool"><img data-action="circle" src="./dist/images/circle-shape-outline.svg" width="25" height="25" alt="circle"></button>
+            <button data-action="bucket-tool" class="bucket-tool tool" id="bucket-tool"><img data-action="bucket-tool" src="/dist/images/paint-bucket.svg" width="25" height="25" alt="paintbucket"></button>
+            <button data-action="rectangle-tool" class="rectangle-tool tool" id="rectangle-tool"><img data-action="rectangle-tool" src="/dist/images/fillrect.svg" width="25" height="25" alt="rectagle"></button>
+            <button data-action="second-rectangle-tool" class="second-rectangle-tool tool" id="second-rectangle-tool"><img data-action="second-rectangle-tool" src="/dist/images/photo-frame.svg" width="25" height="25" alt="second rectangle"></button>
+            <button data-action="trash-tool" class="trash-tool tool" id="trash-tool"><img data-action="trash-tool" src="/dist/images/garbage.svg" width="25" height="25" alt="garbage"></button>
+            <button data-action="eraser" class="eraser tool" id="eraser"><img data-action="eraser" src="/dist/images/eraser.svg" width="25" height="25" alt="eraser"></button>
+            <button data-action="zoom" class="zoom tool" id="zoom"><img data-action="zoom" src="/dist/images/zoom.svg" width="25" height="25" alt="zoom"></button>
+            <button data-action="move" class="move tool" id="move"><img data-action="move" src="/dist/images/move.svg" width="25" height="25" alt="move"></button>
+            <button data-action="pipette" class="pipette tool" id="pipette"><img data-action="pipette" src="/dist/images/pipette.svg" width="25" height="25" alt="pipette"></button>
+            <button data-action="dithering" class="dithering tool" id="dithering"><img data-action="dithering" src="/dist/images/dithering.svg" width="25" height="25" alt="dithering"></button>
+            <button data-action="bright" class="bright tool" id="bright"><img data-action="bright" src="/dist/images/bright.svg" width="25" height="25" alt="bright"></button>
+            <button data-action="shape" class="shape tool" id="shape"><img data-action="shape" src="/dist/images/shape.svg" width="25" height="25" alt="shape"></button>
+            <button data-action="rotate" class="rotate tool" id="rotate"><img data-action="rotate" src="/dist/images/rotate.svg" width="25" height="25" alt="rotate"></button>
+            <!-- <button data-action="zoom" class="zoom tool" id="zoom"><img data-action="zoom" src="/dist/images/zoom.svg" width="25" height="25" alt="zoom"></button> -->
 
           <div class="colors">
             <input type="color" class="color primary">
-            <button data-action="swap-color" class="swap-colors"><img data-action="swap-color" src="./../../src/screens/canvas/images/transfer.svg" width="25" height="25" alt="transfer"></button>
+            <button data-action="swap-color" class="swap-colors"><img data-action="swap-color" src="/dist/images/transfer.svg" width="25" height="25" alt="transfer"></button>
             <input type="color" class="color secondary">
           </div>
+      </div>
+      <div class="keybinder">
+        <button class="keybinder"><img src="./dist/images/keyboard.svg" class="keyboard" width="50" height="50" alt="keyboard"></button>
+      </div>
+      <div class="active-tools"></div>
+      <div class="hide key-list">
+        <div class="keyboard-buttons">
+          <ul>
+            <li>
+              <img src="../../../src/screens/canvas/images/pencil.svg" width="20" height="20" alt="pencil">
+              Pen <span>P</span>
+              <input type="text"> <button class="changer">Change</button>
+            </li>
+
+          </ul>
+        </div>
       </div>
     </div>
     <div class="frames-bar">
@@ -42,12 +80,12 @@
       </div>
     </div>
     <div class="canvas-field">
-      <div>
+      <div class="paint-field-block">
         <canvas class="paint-field" width="128" height="128"></canvas>
       </div>
     </div>
     <div class="layers-tools">
-      <div>
+      <div class="canvas-animation-wrapper">
         <canvas class="animation" width="128" height="128"></canvas>
       </div>
       <div class="properties">
@@ -70,6 +108,16 @@
         <button data-action="small" class="small-size">32x32</button>
         <button data-action="medium" class="medium-size">64x64</button>
         <button data-action="large" class="large-size">128x128</button>
+    </div>
+    <div class="filter-title">
+      <p >FILTERS</p>
+    </div>
+    <div class="filters">
+      <button class="filter sepia tool">Sepia</button>
+    </div>
+    <div class="downloaders">
+        <button class="gif tool">GIF</button>
+        <a class="save" download="New Piskel"></a>
     </div>
     </div>
     <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
