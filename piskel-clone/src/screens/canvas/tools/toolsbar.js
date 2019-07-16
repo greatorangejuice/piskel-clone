@@ -25,11 +25,11 @@ export default class Tools {
       sizeButton.innerText = `${this.pixelWidth}`;
     });
 
-    const inputRange = document.querySelector('.pixel-size');
-    sizeButton.addEventListener('click', () => {
-      inputRange.classList.toggle('hide');
-      sizeButton.innerText = 'Pen size';
-    });
+    // const inputRange = document.querySelector('.pixel-size');
+    // sizeButton.addEventListener('click', () => {
+    //   inputRange.classList.toggle('hide');
+    //   sizeButton.innerText = 'Pen size';
+    // });
   }
 
   setToolsbar() {
