@@ -20,37 +20,22 @@
           <div class="g-signin2 signIn signInButton" data-onsuccess="onSignIn"></div>
           <div class="signOutButton">
             <a href="#" onclick="signOut();" class="signOut signOutButton">Sign out</a>
+            <!-- onclick + e.preventDefault-->
           </div>
           <div class="welcome"></div>
           <div><img class="welcome-avatar" src="#" alt=""></div>
         </div>
-
-        <div class="hide" id="notification" title="notification">
-
-          <h3>Hello!</h3>
-          <ul>
-              <li>If some tools is not working - keep calm and try again</li>
-              <li>Before export GIF you should press GIF button. Always!</li>
-              <li>I hope you will have fun here.</li>
-          </ul>
-          <button class="remove-button">X</button>
-          <div class="wrapper">
-              <input id="disable-checkbox" class="disableBox" type="checkbox" title="Disable notification">
-              <p>Disable notification</p>
-          </div>
-
-  </div>
     </header>
     <div class="tools-bar">
       <div class="canvas-tools">
 
           <div class="pen-size-tool">
-             <button data-action="line-size-tool" class="line-size-tool tool" id="size">Pen size</button>
+             <!-- <button data-action="line-size-tool" class="line-size-tool tool" id="size" disabled>Pen size</button> -->
              <input type="range" min="1" max="10" step="1" class="pixel-size input hide" value="4">
           </div>
             <button data-action="pen-tool" class="pen-tool tool" id="pen-tool"><img data-action="pen-tool" src="./images/pencil.svg" width="25" height="25" alt="pencil"></button>
             <button data-action="circle" class="circle tool"><img data-action="circle" src="./images/circle-shape-outline.svg" width="25" height="25" alt="circle"></button>
-            <button data-action="bucket-tool" class="bucket-tool tool" id="bucket-tool"><img data-action="bucket-tool" src="./images/paint-bucket.svg" width="25" height="25" alt="paintbucket"></button>
+            <!-- <button data-action="bucket-tool" class="bucket-tool tool" id="bucket-tool"><img data-action="bucket-tool" src="./images/paint-bucket.svg" width="25" height="25" alt="paintbucket"></button> -->
             <button data-action="rectangle-tool" class="rectangle-tool tool" id="rectangle-tool"><img data-action="rectangle-tool" src="./images/fillrect.svg" width="25" height="25" alt="rectagle"></button>
             <button data-action="second-rectangle-tool" class="second-rectangle-tool tool" id="second-rectangle-tool"><img data-action="second-rectangle-tool" src="./images/photo-frame.svg" width="25" height="25" alt="second rectangle"></button>
             <button data-action="trash-tool" class="trash-tool tool" id="trash-tool"><img data-action="trash-tool" src="./images/garbage.svg" width="25" height="25" alt="garbage"></button>
